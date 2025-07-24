@@ -1,0 +1,13 @@
+
+virtual_env_cursuri/
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.env
+*.db-journal
+*.sqlite3
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
