@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Login page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="static\css\style.css">
+
+  <!-- TinyMCE -->
+  <!-- <script src="static\tinymce\js\tinymce\tinymce.min.js"></script> -->
+
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom TinyMCE Config -->
+
+</head>
+
+<body class="bg-light">
+
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-10 col-lg-10">
+        <div class="card shadow-sm border-0">
+          <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Introdu parola</h5>
+          </div>
+          <div class="card-body">
+            <form action="{{ url_for('pagina_login') }}" method="POST">
+              <div class="mb-3">
+                <input type="password" class="form-control" name="password" id="title" placeholder="password" required>
+              </div>
+
+              <button type="submit" class="btn btn-primary w-100">Salvează parola</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JS -->
+
+
+</body>
+</html>
