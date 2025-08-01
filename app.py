@@ -115,6 +115,20 @@ def view_lesson(lesson_id):
     conn.close()
     return render_template('index.html', featured=lesson, lessons=all_lessons)
 
+@app.route('/admin_lessons/<int:lesson_id>', methods=['POST', 'GET'])
+def view_and_edit_lesson(lesson_id):
+    if not session['logged_in']:
+        return redirect(url_for('pagina_login'))
+    
+    #vrem sa o scoatem din database si sa ii dam load
+    conn = get_db()
+    cur = conn.cursor()
+
+    lesson = cur.execute('SELECT * FROM lessons WHERE id = ?', (lesson_id, )).fetchone()
+    all_lessons = cur.execute('SELECT * FROM lessons').fetchall()
+
+    return render_template('admin.html', featured=lesson, lessons=all_lessons)
+
 
 if __name__ == '__main__':
     init_db()
